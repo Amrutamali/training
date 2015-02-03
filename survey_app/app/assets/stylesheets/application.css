@@ -21,7 +21,7 @@ h1 {
   text-align: center;
 }
 
-.class1{ text-decoration: underline; font-width:bold;}
+.class1{ padding:40px; background-color:pink; font-width:bold;}
 
 p{
   border-top-style: dotted;
