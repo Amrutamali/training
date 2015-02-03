@@ -1,5 +1,11 @@
 class QuestionsController < ApplicationController
 
+  before_action :init_survey, only: [:edit, :update, :show, :destroy]
+  def init_survey
+     @survey = Survey.find(params[:survey_id])
+    @question = @survey.questions.find(params[:id])
+  end
+
   def index
     @survey = Survey.find(params[:survey_id])
     @questions = @survey.questions
@@ -21,27 +27,26 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @survey = Survey.find(params[:survey_id])
-    @question = @survey.questions.find(params[:id])
-
+    #@survey = Survey.find(params[:survey_id])
+   # @question = @survey.questions.find(params[:id])
   end
 
   def update
-    @survey = Survey.find(params[:survey_id])
-    @question = @survey.questions.find(params[:id])
+    #@survey = Survey.find(params[:survey_id])
+    #@question = @survey.questions.find(params[:id])
     @question.update_attributes(parameter)
     redirect_to  survey_questions_path(@survey, @question)
   end
 
   def show
-    @survey = Survey.find(params[:survey_id])
-    @question = @survey.questions.find(params[:id])
+    #@survey = Survey.find(params[:survey_id])
+    #@question = @survey.questions.find(params[:id])
     @options = @question.options
  end
 
   def destroy
-    @survey = Survey.find(params[:survey_id])
-    @question = @survey.questions.find(params[:id])
+    #@survey = Survey.find(params[:survey_id])
+    #@question = @survey.questions.find(params[:id])
     @question.destroy
     redirect_to action: 'index'
   end

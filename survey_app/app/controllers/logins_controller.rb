@@ -10,7 +10,7 @@ class LoginsController < ApplicationController
       flash[:notice] = "Login Successfully"
      redirect_to surveys_path, method: :GET
     else
-      flash[:error] = "Invlaid password"
+      flash.now[:error] = "Invlaid password"
       render 'new'
     end
   end

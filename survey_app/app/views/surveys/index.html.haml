@@ -1,7 +1,7 @@
 -if flash[:notice]
   = flash[:notice]
 
-%h
+%h1
   %br
   Listing
   %br
@@ -10,6 +10,7 @@
     %tr
       %th Survey Name
       %th
+        %h2
         - @surveys.each do |survey|
           %tr
             %td= survey.name
