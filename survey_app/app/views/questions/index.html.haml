@@ -1,0 +1,12 @@
+%h3
+  -@questions.each do |question|
+    %br
+    = question.description
+    = link_to "Edit", edit_survey_question_path(@survey, question)
+    = link_to "Show", survey_question_path(@survey, question)
+    = link_to "Delete",survey_question_path(@survey, question), method: :DELETE
+%br
+= link_to "new", new_survey_question_path(@survey)
+= link_to "back",survey_path(@survey)
+%br
+= link_to 'Logout', root_path

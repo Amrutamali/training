@@ -1,0 +1,17 @@
+- if flash[:error]
+  = flash[:error]
+%h3
+  Login
+  %br
+  %br
+  = form_tag logins_path do
+    = label_tag :email
+    = text_field_tag :email
+    %br
+    = label_tag :password
+    = password_field_tag :password
+    %br
+    %br
+    = submit_tag "Login"
+
+= link_to "New User", new_registration_path

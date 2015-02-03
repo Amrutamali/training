@@ -1,0 +1,20 @@
+%h3
+  -#@questions.each do |question|
+    =# question.description
+    %#br
+    -#@options.each do |option|
+      =#option.description
+    %#br
+
+Question:
+=@question.description
+%br
+Option:
+%br
+-@options.each do |option|
+  = option.description
+  %br
+%br
+=link_to "Question", survey_questions_path(@survey)
+%br
+= link_to 'Logout',root_path

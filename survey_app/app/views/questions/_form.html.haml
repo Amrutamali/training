@@ -1,0 +1,16 @@
+Question:
+=form_for [@survey, @question] do |f|
+  = f.label :description
+  = f.text_field :description
+  %br
+  %br
+  Options:
+  %br
+  =f.fields_for :options do |option|
+    = option.label :description
+    = option.text_field :description
+    %br
+  %br
+  .action
+  = f.submit
+

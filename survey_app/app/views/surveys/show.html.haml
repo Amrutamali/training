@@ -1,0 +1,14 @@
+%h
+  =@survey.name
+  %br
+  =@survey.survey_type
+  %br
+  =@survey.conducted_on
+  %br
+  =@survey.count_people
+  %br
+  =link_to 'Back',surveys_path
+  =link_to 'Questions', survey_questions_path(@survey.id)
+  %br
+  %br
+  = link_to 'Logout', login_path, method: :DELETE

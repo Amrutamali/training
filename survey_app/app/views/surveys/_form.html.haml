@@ -1,0 +1,16 @@
+-if flash[:notice]
+  = flash[:notice]
+
+=form_for(@survey) do |f|
+  = f.label :name
+  = f.text_field :name
+  %br
+  = f.label :survey_type
+  = f.select :survey_type, Survey::TYPES, include_blank: true
+  %br
+  = f.label 'Conducted on'
+  =# f.text_field :conducted_on
+  =date_select "survey", :conducted_on, start_year: 1991
+  %br
+  %br
+  = f.submit

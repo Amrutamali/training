@@ -1,0 +1,32 @@
+%h3
+  Registration
+  %br
+  %br
+  =form_for (@user), url: { action: :create } do |f|
+    -if @user.errors.full_messages.any?
+      -@user.errors.full_messages.each do |e|
+        = e
+        %br
+    %br
+    =f.label :name
+    =f.text_field :name
+    %br
+    =f.label :age
+    =f.text_field :age
+    %br
+    =f.label :gender
+    =f.text_field :gender
+    %br
+    =f.label :email
+    =f.text_field :email
+    %br
+    =f.label :password
+    =f.password_field :password
+    %br
+    = f.label :password_confirmation
+    = f.password_field :password_confiramtion
+    %br
+
+    = f.submit "Create"
+
+
